@@ -111,7 +111,7 @@ def abstract():
     start = time.time()
     if request.method == 'POST':
         rawtext = request.form['rawtext']
-        summarizer = pipeline('summarization', model="lidiya/bart-base-samsum")
+        summarizer = pipeline('summarization', model="t5-small")
         lenraw = len(rawtext)
         final_reading_time = readingTime(rawtext)
         final_summary = text_summarizer(rawtext)
