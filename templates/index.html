@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+
+{% block title %} Home {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+
+
+{% block content %}
+
+    <main>
+        
+        {% include 'preloader.html' %}
+
+        <!-- Hero -->
+        <section class="section-header bg-secondary text-white">
+            <div class="container">
+               <div class="row justify-content-between align-items-center">
+                  <div class="col-12 col-md-7 col-lg-6 text-center text-md-left">
+                        <h1 class="display-2 mb-4">Text-Summarizer <br class="d-none d-md-inline">Human Like Understanding</h1>
+                        <p class="lead mb-4 text-muted">Summarize text like a human expert, paraphrasing with deep AI.</p>
+  
+                    </div>
+                  <div class="col-12 col-md-5 d-none d-md-block text-center"><img src="/static/assets/img/illustrations/about-illustration.svg" alt=""></div>
+               </div>
+            </div>
+            <figure class="position-absolute bottom-0 left-0 w-100 d-none d-md-block mb-n2">
+               <svg class="fill-white" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1920 43.4" style="enable-background:new 0 0 1920 43.4;" xml:space="preserve">
+                  <path d="M0,23.3c0,0,405.1-43.5,697.6,0c316.5,1.5,108.9-2.6,480.4-14.1c0,0,139-12.2,458.7,14.3 c0,0,67.8,19.2,283.3-22.7v35.1H0V23.3z"></path>
+               </svg>
+            </figure>
+        </section>
+        <!-- End of Hero section -->
+        <section class="section section-lg bg-gray-200">
+            <figure class="position-absolute top-0 left-0 w-100 d-none d-md-block mt-n3">
+                <svg class="fill-gray-200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1920 43.4" style="enable-background:new 0 0 1920 43.4;" xml:space="preserve">
+                   <path d="M0,23.3c0,0,405.1-43.5,697.6,0c316.5,1.5,108.9-2.6,480.4-14.1c0,0,139-12.2,458.7,14.3 c0,0,67.8,19.2,283.3-22.7v35.1H0V23.3z"></path>
+                </svg>
+             </figure>
+            <div class="container-fluid">
+                <div class="row text-center">
+                    <div class="col">
+                        <form method="POST">
+                            <textarea name="rawtext" cols="20" rows="20" class="form-control"
+                              required="true" placeholder="Enter Text Here"></textarea>
+                            <br>
+                            <button class="btn btn-primary btn-sm " formaction="/analyze" type="reset">Clear</button>
+                            <button class="btn btn-primary btn-sm" formaction="/analyze" type="submit">Extract</button>
+                            <button class="btn btn-primary btn-sm" formaction="/abstract" type="submit">Abstract</button>
+                            <button class="btn btn-primary btn-sm" formaction="/analyze_url" type="submit">Url</button>
+                          </form>
+                    </div>
+                </div>
+            </div>
+            <figure class="position-absolute bottom-0 left-0 w-100 d-none d-md-block mb-n2">
+                <svg class="fill-white" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1920 43.4" style="enable-background:new 0 0 1920 43.4;" xml:space="preserve">
+                   <path d="M0,23.3c0,0,405.1-43.5,697.6,0c316.5,1.5,108.9-2.6,480.4-14.1c0,0,139-12.2,458.7,14.3 c0,0,67.8,19.2,283.3-22.7v35.1H0V23.3z"></path>
+                </svg>
+             </figure>
+        </section>
+        <!-- End of section -->
+
+        <!-- Section -->
+        <section class="section section-lg bg-gray-200">
+            <figure class="position-absolute top-0 left-0 w-100 d-none d-md-block mt-n3">
+                <svg class="fill-gray-200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1920 43.4" style="enable-background:new 0 0 1920 43.4;" xml:space="preserve">
+                   <path d="M0,23.3c0,0,405.1-43.5,697.6,0c316.5,1.5,108.9-2.6,480.4-14.1c0,0,139-12.2,458.7,14.3 c0,0,67.8,19.2,283.3-22.7v35.1H0V23.3z"></path>
+                </svg>
+             </figure>
+            <div class="container-fluid">
+                <div class="row text-center">
+                    <div class="col">
+                        <section class="section section-solutions-about grey darken-2">
+                            <div class="container white-text">
+                              <br>
+                                <div class="row">
+                                   <div class="col s12 m6">
+                                    <div class="icon-block">
+                                     <h5 class="center">Your Text</h5>
+                                    <p><b>Reading Time: <span style="color:#0091EA;">{{ final_reading_time }} min </b><span style="color:rgb(0, 0, 0)">
+                                    <b>Total
+                                              Length:</b> </span> <b>{{lenraw}}</b></span></p>
+                                      <p class="light" style="color:rgb(52, 52, 109);"><b>{{ctext}}</b></p></b>
+                          
+                            </div>
+                          </div>
+                          <div class="col s12 m6 grey darken-3">
+                                      <div class="icon-block">
+                          
+                                        <h5 class="center">Summarized</h5>
+                                        <div class="" role="alert">
+                                          <p><b>Reading Time:</b> <span style="color:#0091EA;"><b>{{ summary_reading_time }} min</b> <span style="color:rgb(0, 0, 0)">
+                                          <b>Total Length: </b></span><b> {{lenfinal}}</b></span></p>
+                                        </div>
+                                        <p class="light"><b>{{ final_summary }}</b></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                           
+                            </section>
+                    </div>
+                </div>
+            </div>
+            <figure class="position-absolute bottom-0 left-0 w-100 d-none d-md-block mb-n2">
+                <svg class="fill-white" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1920 43.4" style="enable-background:new 0 0 1920 43.4;" xml:space="preserve">
+                   <path d="M0,23.3c0,0,405.1-43.5,697.6,0c316.5,1.5,108.9-2.6,480.4-14.1c0,0,139-12.2,458.7,14.3 c0,0,67.8,19.2,283.3-22.7v35.1H0V23.3z"></path>
+                </svg>
+             </figure>
+        </section>
+
+        <!-- Section -->
+        
+        <!-- End of section -->
+
+    </main>
+
+    {% include 'footer-about.html' %}
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

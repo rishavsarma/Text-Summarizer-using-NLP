@@ -1,0 +1,247 @@
+{% extends "base.html" %}
+
+{% block title %} About {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+    <main>
+        
+        {% include 'preloader.html' %}
+
+        <!-- Hero -->
+        <section class="section-header bg-secondary text-white">
+            <div class="container">
+               <div class="row justify-content-between align-items-center">
+                  <div class="col-12 col-md-7 col-lg-6 text-center text-md-left">
+                    <h1 class="display-2 mb-4">Text-Summarizer <br class="d-none d-md-inline">Human Like Understanding</h1>
+                    <p class="lead mb-4 text-muted">Summarize text like a human expert, paraphrasing with deep AI.</p>
+
+                    </div>
+                  <div class="col-12 col-md-5 d-none d-md-block text-center"><img src="/static/assets/img/illustrations/about-illustration.svg" alt=""></div>
+               </div>
+            </div>
+            <figure class="position-absolute bottom-0 left-0 w-100 d-none d-md-block mb-n2">
+               <svg class="fill-white" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1920 43.4" style="enable-background:new 0 0 1920 43.4;" xml:space="preserve">
+                  <path d="M0,23.3c0,0,405.1-43.5,697.6,0c316.5,1.5,108.9-2.6,480.4-14.1c0,0,139-12.2,458.7,14.3 c0,0,67.8,19.2,283.3-22.7v35.1H0V23.3z"></path>
+               </svg>
+            </figure>
+        </section>
+        <!-- End of Hero section -->
+        <section class="section section-lg bg-gray-200">
+            <figure class="position-absolute top-0 left-0 w-100 d-none d-md-block mt-n3">
+                <svg class="fill-gray-200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1920 43.4" style="enable-background:new 0 0 1920 43.4;" xml:space="preserve">
+                   <path d="M0,23.3c0,0,405.1-43.5,697.6,0c316.5,1.5,108.9-2.6,480.4-14.1c0,0,139-12.2,458.7,14.3 c0,0,67.8,19.2,283.3-22.7v35.1H0V23.3z"></path>
+                </svg>
+             </figure>
+            <div class="container-fluid">
+                <h4 class="center">NLP</h4>
+                      <p>Natural language processing (NLP) refers to the branch of computer science—and more specifically, the branch of
+                        artificial intelligence or AI—concerned with giving computers the ability to understand text and spoken words in
+                        much the same way human beings can.
+                
+                        NLP combines computational linguistics—rule-based modeling of human language—with statistical, machine learning,
+                        and deep learning models. Together, these technologies enable computers to process human language in the form of
+                        text or voice data and to ‘understand’ its full meaning, complete with the speaker or writer’s intent and
+                        sentiment.
+                
+                        NLP drives computer programs that translate text from one language to another, respond to spoken commands, and
+                        summarize large volumes of text rapidly—even in real time. There’s a good chance you’ve interacted with NLP in
+                        the form of voice-operated GPS systems, digital assistants, speech-to-text dictation software, customer service
+                        chatbots, and other consumer conveniences. But NLP also plays a growing role in enterprise solutions that help
+                        streamline business operations, increase employee productivity, and simplify mission-critical business
+                        processes.
+                
+                        NLP tasks
+                        Human language is filled with ambiguities that make it incredibly difficult to write software that accurately
+                        determines the intended meaning of text or voice data. Homonyms, homophones, sarcasm, idioms, metaphors, grammar
+                        and usage exceptions, variations in sentence structure—these just a few of the irregularities of human language
+                        that take humans years to learn, but that programmers must teach natural language-driven applications to
+                        recognize and understand accurately from the start, if those applications are going to be useful.
+                
+                        Several NLP tasks break down human text and voice data in ways that help the computer make sense of what it's
+                        ingesting. Some of these tasks include the following:
+                
+                        Speech recognition, also called speech-to-text, is the task of reliably converting voice data into text data.
+                        Speech recognition is required for any application that follows voice commands or answers spoken questions. What
+                        makes speech recognition especially challenging is the way people talk—quickly, slurring words together, with
+                        varying emphasis and intonation, in different accents, and often using incorrect grammar.
+                        Part of speech tagging, also called grammatical tagging, is the process of determining the part of speech of a
+                        particular word or piece of text based on its use and context. Part of speech identifies ‘make’ as a verb in ‘I
+                        can make a paper plane,’ and as a noun in ‘What make of car do you own?’
+                        Word sense disambiguation is the selection of the meaning of a word with multiple meanings through a process of
+                        semantic analysis that determine the word that makes the most sense in the given context. For example, word
+                        sense disambiguation helps distinguish the meaning of the verb 'make' in ‘make the grade’ (achieve) vs. ‘make a
+                        bet’ (place).
+                        Named entity recognition, or NEM, identifies words or phrases as useful entities. NEM identifies ‘Kentucky’ as a
+                        location or ‘Fred’ as a man's name.
+                        Co-reference resolution is the task of identifying if and when two words refer to the same entity. The most
+                        common example is determining the person or object to which a certain pronoun refers (e.g., ‘she’ = ‘Mary’), but
+                        it can also involve identifying a metaphor or an idiom in the text (e.g., an instance in which 'bear' isn't an
+                        animal but a large hairy person).
+                        Sentiment analysis attempts to extract subjective qualities—attitudes, emotions, sarcasm, confusion,
+                        suspicion—from text.
+                        Natural language generation is sometimes described as the opposite of speech recognition or speech-to-text; it's
+                        the task of putting structured information into human language.
+                        See the blog post “NLP vs. NLU vs. NLG: the differences between three natural language processing concepts” for
+                        a deeper look into how these concepts relate.
+                
+                        NLP tools and approaches
+                        Python and the Natural Language Toolkit (NLTK)
+                        The Python programing language provides a wide range of tools and libraries for attacking specific NLP tasks.
+                        Many of these are found in the Natural Language Toolkit, or NLTK, an open source collection of libraries,
+                        programs, and education resources for building NLP programs.
+                
+                        The NLTK includes libraries for many of the NLP tasks listed above, plus libraries for subtasks, such as
+                        sentence parsing, word segmentation, stemming and lemmatization (methods of trimming words down to their roots),
+                        and tokenization (for breaking phrases, sentences, paragraphs and passages into tokens that help the computer
+                        better understand the text). It also includes libraries for implementing capabilities such as semantic
+                        reasoning, the ability to reach logical conclusions based on facts extracted from text.
+                
+                        Statistical NLP, machine learning, and deep learning
+                        The earliest NLP applications were hand-coded, rules-based systems that could perform certain NLP tasks, but
+                        couldn't easily scale to accommodate a seemingly endless stream of exceptions or the increasing volumes of text
+                        and voice data.
+                
+                        Enter statistical NLP, which combines computer algorithms with machine learning and deep learning models to
+                        automatically extract, classify, and label elements of text and voice data and then assign a statistical
+                        likelihood to each possible meaning of those elements. Today, deep learning models and learning techniques based
+                        on convolutional neural networks (CNNs) and recurrent neural networks (RNNs) enable NLP systems that 'learn' as
+                        they work and extract ever more accurate meaning from huge volumes of raw, unstructured, and unlabeled text and
+                        voice data sets.
+                
+                        For a deeper dive into the nuances between these technologies and their learning approaches, see “AI vs. Machine
+                        Learning vs. Deep Learning vs. Neural Networks: What’s the Difference?”
+                
+                        NLP use cases
+                        Natural language processing is the driving force behind machine intelligence in many modern real-world
+                        applications. Here are a few examples:
+                
+                        Spam detection: You may not think of spam detection as an NLP solution, but the best spam detection technologies
+                        use NLP's text classification capabilities to scan emails for language that often indicates spam or phishing.
+                        These indicators can include overuse of financial terms, characteristic bad grammar, threatening language,
+                        inappropriate urgency, misspelled company names, and more. Spam detection is one of a handful of NLP problems
+                        that experts consider 'mostly solved' (although you may argue that this doesn’t match your email experience).
+                        Machine translation: Google Translate is an example of widely available NLP technology at work. Truly useful
+                        machine translation involves more than replacing words in one language with words of another. Effective
+                        translation has to capture accurately the meaning and tone of the input language and translate it to text with
+                        the same meaning and desired impact in the output language. Machine translation tools are making good progress
+                        in terms of accuracy. A great way to test any machine translation tool is to translate text to one language and
+                        then back to the original. An oft-cited classic example: Not long ago, translating “The spirit is willing but
+                        the flesh is weak” from English to Russian and back yielded “The vodka is good but the meat is rotten.” Today,
+                        the result is “The spirit desires, but the flesh is weak,” which isn’t perfect, but inspires much more
+                        confidence in the English-to-Russian translation.
+                        Virtual agents and chatbots: Virtual agents such as Apple's Siri and Amazon's Alexa use speech recognition to
+                        recognize patterns in voice commands and natural language generation to respond with appropriate action or
+                        helpful comments. Chatbots perform the same magic in response to typed text entries. The best of these also
+                        learn to recognize contextual clues about human requests and use them to provide even better responses or
+                        options over time. The next enhancement for these applications is question answering, the ability to respond to
+                        our questions—anticipated or not—with relevant and helpful answers in their own words.
+                        Social media sentiment analysis: NLP has become an essential business tool for uncovering hidden data insights
+                        from social media channels. Sentiment analysis can analyze language used in social media posts, responses,
+                        reviews, and more to extract attitudes and emotions in response to products, promotions, and events–information
+                        companies can use in product designs, advertising campaigns, and more.
+                        Text summarization: Text summarization uses NLP techniques to digest huge volumes of digital text and create
+                        summaries and synopses for indexes, research databases, or busy readers who don't have time to read full text.
+                        The best text summarization applications use semantic reasoning and natural language generation (NLG) to add
+                        useful context and conclusions to summaries.
+                        Natural language processing</p>
+            </div>
+            <figure class="position-absolute bottom-0 left-0 w-100 d-none d-md-block mb-n2">
+                <svg class="fill-white" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1920 43.4" style="enable-background:new 0 0 1920 43.4;" xml:space="preserve">
+                   <path d="M0,23.3c0,0,405.1-43.5,697.6,0c316.5,1.5,108.9-2.6,480.4-14.1c0,0,139-12.2,458.7,14.3 c0,0,67.8,19.2,283.3-22.7v35.1H0V23.3z"></path>
+                </svg>
+             </figure>
+        </section>
+        <!-- End of section -->
+
+        <!-- Section -->
+        <section class="section section-lg bg-gray-200">
+            <figure class="position-absolute top-0 left-0 w-100 d-none d-md-block mt-n3">
+                <svg class="fill-gray-200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1920 43.4" style="enable-background:new 0 0 1920 43.4;" xml:space="preserve">
+                   <path d="M0,23.3c0,0,405.1-43.5,697.6,0c316.5,1.5,108.9-2.6,480.4-14.1c0,0,139-12.2,458.7,14.3 c0,0,67.8,19.2,283.3-22.7v35.1H0V23.3z"></path>
+                </svg>
+             </figure>
+             <section class="section section-solutions-about grey lighten-3 ">
+              <div class="container">
+                <div class="row">
+                  <div class="col s12 m8">
+                    <div class="icon-block">
+                      <br>
+                      
+            
+                      <p class="light">{{ctext}}</p>
+                      <br>
+                    </div>
+                  </div>
+                </div>
+            
+            
+              
+            <div class="row">
+              <div class="col s12 m6">
+                
+                  
+                        <div class="">
+                         <h4> Summarize text like a human expert, paraphrasing with deep AI</h4>
+                          <p> Text summarizer is powered by modern AI. The text summarizer understands the context and generate summaries in its own words. This technique is known as abstractive summarization.
+                            
+                            A one-line summary may be generated for short text, which tries to capture the essence and generate a novel, sometimes wild, summary.</p>
+                        </div>
+                </div>
+              
+              <div class="col s12 m6">
+                
+                  
+                      <div class="">
+                        <h4>High quality AI summaries with deep understanding of the supplied text</h4>
+                        <p>  A good quality summary, besides capturing the essence well, is also readable and concise in articulation. In contrast to summarizers employing older technologies which simply pick key sentences and words, Text summarizer produces great summaries rivalling human generated ones.</p>
+                      </div>
+                    </div>
+                <br>
+              <div class="col s12 m6">
+                
+                  
+                        <div class="">
+                          <h4>Automatic text summarizer employing state-of-the-art AI for stunning abstractive summaries</h4>
+                          <p>Text summarizer works regardless of your specific domain. It is ideal for students, teachers, or anyone in the academia who needs to comprehend large amounts of text on a daily basis.</p>
+                        </div>
+              </div>
+              <br>
+              <h4>Generating a summary suitable for specific needs automatically</h4>
+               <p class="center brown-text"> You can just hit the Summarize button to generate the summary. However, there are a small bunch of settings you can use to get the ideal summary you want. Here are the steps to generate an AI summary automatically.</p>
+                
+               <p>Copy and paste the text you want to summarize in the "Original Text" text area</p>
+               <p>Choose one of the two available modes by pressing the appropriate toggle button.</p>
+                
+               <p> Abstractive: This advanced AI algorithm (Abstractive Summarization) will summarize the text with a deep understanding of the original content. The generated summary could contain new sentences and modifications to existing sentences. In addition, the summary may also deduce information not explicitly stated in the original.</p>
+               <p> This mode is the slower of the two, but usually of high quality and closer to that generated by a qualified human. Works well regardless of the length of the content.</p>
+                
+               <p> Extractive: This lighter AI algorithm (Abstractive Summarization) will summarize the text by selecting key sentences from the original text. It is useful when you do not want any of the original sentences modified. Works best when the original text is very long and can be much faster than the Abstractive mode. Note: This mode may be overridden if selected when the original content is rather short, as determined by the artificial intelligence engine.</p>
+                
+               <p> Press the Summarize button to generate the summary Depending on the length of the original content, this may take a bit of time, usually under 30 seconds, but could go up to a minute or so.</p>
+            </div>
+            
+                    </div>
+            </section>
+            <figure class="position-absolute bottom-0 left-0 w-100 d-none d-md-block mb-n2">
+                <svg class="fill-white" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1920 43.4" style="enable-background:new 0 0 1920 43.4;" xml:space="preserve">
+                   <path d="M0,23.3c0,0,405.1-43.5,697.6,0c316.5,1.5,108.9-2.6,480.4-14.1c0,0,139-12.2,458.7,14.3 c0,0,67.8,19.2,283.3-22.7v35.1H0V23.3z"></path>
+                </svg>
+             </figure>
+        </section>
+
+        <!-- Section -->
+        
+        <!-- End of section -->
+
+    </main>
+
+    {% include 'footer-about.html' %}
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}
